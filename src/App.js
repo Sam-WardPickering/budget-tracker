@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import BudgetCard from './components/BudgetCard';
-import AddBudgetModal from './contexts/AddBudgetModal';
-import AddExpenseModal from './contexts/AddExpenseModal';
+import AddBudgetModal from './components/AddBudgetModal';
+import AddExpenseModal from './components/AddExpenseModal';
+import UncategorisedBudgetCard from './components/UncategorisedBudgetCard'
 import { useBudgets } from './contexts/BudgetsContext';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           />
           )
         })}
+        <UncategorisedBudgetCard />
       </div>
     </Container>
     <AddBudgetModal 
