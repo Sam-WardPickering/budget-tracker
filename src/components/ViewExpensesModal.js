@@ -38,7 +38,10 @@ export default function ViewExpensesModal({ budgetId, handleClose }) {
                            <div className="me-auto fs-4">{expense.description}</div>
                            <div className="fs-5">{currencyFormatter.format(expense.amount)}
                            </div>
-                           <Button size="sm" variant="outline-danger">
+                           <Button 
+                            onClick={() => deleteExpense(expense)}
+                            size="sm" 
+                            variant="outline-danger">
                                &times;
                            </Button>
                        </Stack>
