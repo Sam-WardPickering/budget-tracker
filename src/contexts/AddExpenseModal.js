@@ -1,6 +1,6 @@
 import { Modal, Form, Button } from "react-bootstrap"
 import { useRef } from 'react'
-import { useBudgets } from "./BudgetsContext"
+import { UNCATEGORISED_BUDGET_ID, useBudgets } from "./BudgetsContext"
 
 export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
   const descriptionRef = useRef()
@@ -44,6 +44,7 @@ export default function AddExpenseModal({ show, handleClose, defaultBudgetId }) 
                     <Form.Select 
                     defaultValue={defaultBudgetId} 
                     ref={budgetIdRef}>
+                        <option id={UNCATEGORISED_BUDGET_ID}>Uncategorised</option>
                         {budgets.map(budget => (
                             <option key={budget.id} value={budget.id}>
                                 {budget.name}
